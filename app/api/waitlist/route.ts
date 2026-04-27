@@ -1,7 +1,10 @@
 import { NextResponse } from "next/server";
 import { Redis } from "@upstash/redis";
 
-const redis = Redis.fromEnv();
+const redis = new Redis({
+  url: process.env["findyourtrade_KV_REST_API_URL"]!,
+  token: process.env["findyourtrade_KV_REST_API_TOKEN"]!,
+});
 const KEY = "waitlist:emails";
 
 export async function POST(req: Request) {
