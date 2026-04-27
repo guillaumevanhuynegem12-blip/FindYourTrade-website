@@ -45,7 +45,7 @@ export default function FAQ() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs tracking-[0.25em] text-cyan-300/80 uppercase mb-4"
+            className="inline-block text-xs tracking-[0.25em] text-violet-300/80 uppercase mb-4"
           >
             FAQ
           </motion.div>

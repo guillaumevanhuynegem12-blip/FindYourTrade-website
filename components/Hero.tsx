@@ -14,7 +14,7 @@ export default function Hero() {
           transition={{ duration: 0.6 }}
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-white/70 text-xs mb-8"
         >
-          <span className="w-1.5 h-1.5 rounded-full bg-cyan-400" />
+          <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
           Early access now open
         </motion.div>
 
@@ -47,7 +47,7 @@ export default function Hero() {
         >
           <Link
             href="#waitlist"
-            className="px-6 py-3 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 text-white font-medium shadow-lg shadow-cyan-500/20 hover:shadow-cyan-500/40 transition-all"
+            className="px-6 py-3 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 text-white font-medium shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40 transition-all"
           >
             Join the waitlist
           </Link>

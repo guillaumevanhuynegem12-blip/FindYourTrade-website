@@ -51,8 +51,8 @@ function Card({
       transition={{ duration: 0.5 }}
       className="relative rounded-2xl border border-white/5 bg-white/[0.02] p-6"
     >
-      <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/20 flex items-center justify-center mb-4">
-        <Icon className="w-4 h-4 text-cyan-300" />
+      <div className="w-9 h-9 rounded-lg bg-gradient-to-br from-violet-500/20 to-purple-600/20 border border-violet-500/20 flex items-center justify-center mb-4">
+        <Icon className="w-4 h-4 text-violet-300" />
       </div>
       <div className="text-[10px] tracking-[0.2em] text-white/40 uppercase mb-1.5">
         {kicker}

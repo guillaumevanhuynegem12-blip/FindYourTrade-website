@@ -64,7 +64,7 @@ export default function DeepDive() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5 }}
-            className="inline-block text-xs tracking-[0.25em] text-cyan-300/80 uppercase mb-4"
+            className="inline-block text-xs tracking-[0.25em] text-violet-300/80 uppercase mb-4"
           >
             How it works
           </motion.div>
@@ -110,7 +110,7 @@ function Row({
         transition={{ duration: 0.7 }}
       >
         <div className="flex items-center gap-3 mb-5">
-          <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-cyan-400 to-blue-500">
+          <span className="text-5xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-violet-400 to-purple-500">
             {section.num}
           </span>
           <span className="text-xs tracking-[0.2em] text-white/50 uppercase">
@@ -124,7 +124,7 @@ function Row({
         <ul className="mt-6 space-y-3">
           {section.bullets.map((b) => (
             <li key={b} className="flex items-start gap-3 text-white/75">
-              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-cyan-400 to-blue-500 flex-shrink-0" />
+              <span className="mt-2 w-1.5 h-1.5 rounded-full bg-gradient-to-br from-violet-400 to-purple-500 flex-shrink-0" />
               <span>{b}</span>
             </li>
           ))}
@@ -146,8 +146,8 @@ function Row({
 function Visual({ kind }: { kind: string }) {
   return (
     <div className="relative">
-      <div className="absolute -inset-6 bg-gradient-to-br from-cyan-600/20 via-blue-600/15 to-indigo-600/20 blur-3xl opacity-70 pointer-events-none" />
-      <div className="relative rounded-2xl border border-cyan-500/20 bg-[#0A1018]/90 backdrop-blur-xl overflow-hidden p-5 shadow-2xl">
+      <div className="absolute -inset-6 bg-gradient-to-br from-violet-600/20 via-purple-600/15 to-purple-600/20 blur-3xl opacity-70 pointer-events-none" />
+      <div className="relative rounded-2xl border border-violet-500/20 bg-[#0A1018]/90 backdrop-blur-xl overflow-hidden p-5 shadow-2xl">
         {kind === "coach" && <CoachVisual />}
         {kind === "journal" && <JournalVisual />}
         {kind === "risk" && <RiskVisual />}
@@ -166,7 +166,7 @@ function CoachVisual() {
   return (
     <div className="space-y-3">
       <div className="flex items-center gap-2 text-xs text-white/50 mb-2">
-        <Brain className="w-4 h-4 text-cyan-300" />
+        <Brain className="w-4 h-4 text-violet-300" />
         AI Coach · 3 new insights
       </div>
       {insights.map((i) => (
@@ -203,7 +203,7 @@ function JournalVisual() {
   return (
     <div>
       <div className="flex items-center gap-2 text-xs text-white/50 mb-3">
-        <BookOpen className="w-4 h-4 text-cyan-300" />
+        <BookOpen className="w-4 h-4 text-violet-300" />
         Journal · 4 trades auto-logged today
       </div>
       <div className="space-y-2">
@@ -212,7 +212,7 @@ function JournalVisual() {
             key={t.sym + t.setup}
             className="flex items-center gap-3 p-2.5 rounded-lg bg-white/[0.03] border border-white/5"
           >
-            <div className="w-10 h-10 rounded-md bg-gradient-to-br from-cyan-500/20 to-blue-600/20 border border-cyan-500/20 flex items-center justify-center text-xs font-semibold">
+            <div className="w-10 h-10 rounded-md bg-gradient-to-br from-violet-500/20 to-purple-600/20 border border-violet-500/20 flex items-center justify-center text-xs font-semibold">
               {t.sym}
             </div>
             <div className="flex-1 min-w-0">
@@ -254,7 +254,7 @@ function RiskVisual() {
     <div>
       <div className="flex items-center justify-between mb-4">
         <div className="flex items-center gap-2 text-xs text-white/50">
-          <Shield className="w-4 h-4 text-cyan-300" />
+          <Shield className="w-4 h-4 text-violet-300" />
           Risk Control · Active
         </div>
         <span className="text-[10px] px-2 py-0.5 rounded-full bg-emerald-500/10 text-emerald-300 border border-emerald-500/20">
@@ -278,7 +278,7 @@ function RiskVisual() {
                 transition={{ duration: 1, ease: "easeOut" }}
                 className={`h-full rounded-full ${
                   l.color === "orange"
-                    ? "bg-gradient-to-r from-cyan-500 to-blue-600"
+                    ? "bg-gradient-to-r from-violet-500 to-purple-600"
                     : "bg-gradient-to-r from-amber-500 to-rose-500"
                 }`}
               />
@@ -286,7 +286,7 @@ function RiskVisual() {
           </div>
         ))}
       </div>
-      <div className="mt-5 p-3 rounded-lg bg-cyan-500/[0.06] border border-cyan-500/20 text-xs text-cyan-100/80">
+      <div className="mt-5 p-3 rounded-lg bg-violet-500/[0.06] border border-violet-500/20 text-xs text-violet-100/80">
         Next trade blocked if it breaches any rule. No override.
       </div>
     </div>
@@ -297,11 +297,11 @@ function StrategyVisual() {
   return (
     <div>
       <div className="flex items-center gap-2 text-xs text-white/50 mb-3">
-        <Bot className="w-4 h-4 text-cyan-300" />
+        <Bot className="w-4 h-4 text-violet-300" />
         Strategy Builder · Backtest complete
       </div>
       <div className="rounded-lg bg-black/40 border border-white/5 p-3 mb-4">
-        <div className="text-[10px] text-cyan-300/70 tracking-wider uppercase mb-2">
+        <div className="text-[10px] text-violet-300/70 tracking-wider uppercase mb-2">
           Your description
         </div>
         <div className="text-sm text-white/80 leading-relaxed">
@@ -315,7 +315,7 @@ function StrategyVisual() {
         <MiniStat label="Trades" value="412" />
       </div>
       <div className="flex items-center gap-2">
-        <button className="flex-1 text-xs py-2 rounded-md bg-gradient-to-br from-cyan-500 to-blue-600 font-medium">
+        <button className="flex-1 text-xs py-2 rounded-md bg-gradient-to-br from-violet-500 to-purple-600 font-medium">
           Deploy live
         </button>
         <button className="flex-1 text-xs py-2 rounded-md bg-white/5 border border-white/10 text-white/70">

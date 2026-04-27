@@ -43,7 +43,7 @@ export default function DashboardPreview() {
   return (
     <section id="preview" className="relative px-6 pb-32">
       <div className="relative max-w-6xl mx-auto">
-        <div className="absolute -inset-10 bg-cyan-600/10 blur-3xl opacity-50 pointer-events-none" />
+        <div className="absolute -inset-10 bg-violet-600/10 blur-3xl opacity-50 pointer-events-none" />
 
         <motion.div
           initial={{ opacity: 0, y: 40 }}
@@ -53,8 +53,8 @@ export default function DashboardPreview() {
           data-theme={theme}
           className={`relative rounded-2xl border backdrop-blur-xl overflow-hidden shadow-2xl transition-colors ${
             theme === "dark"
-              ? "border-cyan-500/20 bg-[#0A1018]/90"
-              : "border-cyan-500/30 bg-[#FAFAF9]"
+              ? "border-violet-500/20 bg-[#0A1018]/90"
+              : "border-violet-500/30 bg-[#FAFAF9]"
           }`}
         >
           <div className="flex items-center gap-2 px-4 py-3 border-b border-white/5">
@@ -71,7 +71,7 @@ export default function DashboardPreview() {
             <button
               onClick={() => setTheme((t) => (t === "dark" ? "light" : "dark"))}
               aria-label={`Switch to ${theme === "dark" ? "light" : "dark"} mode`}
-              className="w-7 h-7 rounded-md bg-white/5 hover:bg-white/10 border border-white/5 hover:border-cyan-500/40 flex items-center justify-center text-white/60 hover:text-cyan-400 transition-colors"
+              className="w-7 h-7 rounded-md bg-white/5 hover:bg-white/10 border border-white/5 hover:border-violet-500/40 flex items-center justify-center text-white/60 hover:text-violet-400 transition-colors"
             >
               {theme === "dark" ? <Sun className="w-3.5 h-3.5" /> : <Moon className="w-3.5 h-3.5" />}
             </button>
@@ -174,7 +174,7 @@ function TopBar() {
         </div>
         <div className="relative">
           <Bell className="w-4 h-4 text-white/60" />
-          <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-cyan-500" />
+          <span className="absolute -top-1 -right-1 w-2 h-2 rounded-full bg-violet-500" />
         </div>
         <div className="w-8 h-8 rounded-full bg-white/10 border border-white/10" />
       </div>
@@ -285,12 +285,12 @@ function NovxScoreCard() {
     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5 h-full">
       <div className="flex items-center justify-between mb-1">
         <div className="text-xs text-white/50">Novx Score</div>
-        <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 text-cyan-200 border border-cyan-500/20">
+        <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/20">
           Top 14%
         </span>
       </div>
       <div className="flex items-baseline gap-2 mb-3">
-        <div className="text-4xl font-bold text-cyan-300">{score}</div>
+        <div className="text-4xl font-bold text-violet-300">{score}</div>
         <div className="text-xs text-white/40">/ 100</div>
       </div>
       <svg viewBox="0 0 220 220" className="w-full">
@@ -551,7 +551,7 @@ function DayPerfCard() {
     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5 h-full">
       <div className="flex items-center justify-between mb-4">
         <div className="text-xs text-white/50">Performance by day</div>
-        <div className="text-[10px] text-cyan-300/70">Best: Fri</div>
+        <div className="text-[10px] text-violet-300/70">Best: Fri</div>
       </div>
       <div className="space-y-3">
         {days.map((d) => {
@@ -641,7 +641,7 @@ function JournalView() {
               initial={{ opacity: 0, x: -10 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.3, delay: i * 0.04 }}
-              className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.02] border border-white/5 hover:border-cyan-500/20 transition-colors"
+              className="flex items-center gap-3 p-3 rounded-lg bg-white/[0.02] border border-white/5 hover:border-violet-500/20 transition-colors"
             >
               <div className="w-11 h-11 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center text-xs font-semibold flex-shrink-0">
                 {t.sym}
@@ -772,7 +772,7 @@ function RiskView() {
             <div className="text-xs text-white/50 mb-3">Prop firm template</div>
             <div className="flex items-center gap-3 mb-3">
               <div className="w-10 h-10 rounded-lg bg-white/[0.04] border border-white/10 flex items-center justify-center">
-                <Shield className="w-4 h-4 text-cyan-300" />
+                <Shield className="w-4 h-4 text-violet-300" />
               </div>
               <div>
                 <div className="text-sm font-semibold">FTMO $100k</div>
@@ -798,7 +798,7 @@ function RiskView() {
                         ? "bg-rose-500/10 text-rose-300 border border-rose-500/20"
                         : r.kind === "lockout"
                           ? "bg-amber-500/10 text-amber-300 border border-amber-500/20"
-                          : "bg-cyan-500/10 text-cyan-300 border border-cyan-500/20"
+                          : "bg-violet-500/10 text-violet-300 border border-violet-500/20"
                     }`}
                   >
                     {r.kind === "blocked" ? (
@@ -886,7 +886,7 @@ function CoachView() {
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="lg:col-span-8 rounded-xl border border-white/5 bg-white/[0.02] p-5">
           <div className="flex items-center gap-2 mb-4">
-            <Brain className="w-4 h-4 text-cyan-300" />
+            <Brain className="w-4 h-4 text-violet-300" />
             <div className="text-xs text-white/50">AI insights · Updated 2m ago</div>
           </div>
           <div className="space-y-3">
@@ -921,7 +921,7 @@ function CoachView() {
                     <div className="text-xs text-white/55 mt-1 leading-relaxed">
                       {ins.detail}
                     </div>
-                    <div className="mt-3 inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-md bg-cyan-500/10 border border-cyan-500/20 text-cyan-200">
+                    <div className="mt-3 inline-flex items-center gap-1.5 text-[11px] px-2.5 py-1 rounded-md bg-violet-500/10 border border-violet-500/20 text-violet-200">
                       <Sparkles className="w-3 h-3" />
                       {ins.action}
                     </div>
@@ -956,13 +956,13 @@ function CoachView() {
 
           <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5">
             <div className="flex items-center gap-2 mb-3">
-              <Sparkles className="w-4 h-4 text-cyan-300" />
-              <div className="text-xs text-cyan-200">Before your next session</div>
+              <Sparkles className="w-4 h-4 text-violet-300" />
+              <div className="text-xs text-violet-200">Before your next session</div>
             </div>
             <ul className="space-y-2">
               {checklist.map((c) => (
                 <li key={c} className="flex items-start gap-2 text-[12px] text-white/80">
-                  <div className="w-3.5 h-3.5 rounded border border-cyan-400/40 mt-0.5 flex-shrink-0" />
+                  <div className="w-3.5 h-3.5 rounded border border-violet-400/40 mt-0.5 flex-shrink-0" />
                   {c}
                 </li>
               ))}
@@ -1001,7 +1001,7 @@ function StrategiesView() {
               Built in plain English · Backtested on tick data · One-click deploy
             </div>
           </div>
-          <button className="text-[11px] px-3 py-1.5 rounded-md bg-gradient-to-br from-cyan-500 to-blue-600 font-medium">
+          <button className="text-[11px] px-3 py-1.5 rounded-md bg-gradient-to-br from-violet-500 to-purple-600 font-medium">
             + New strategy
           </button>
         </div>
@@ -1013,12 +1013,12 @@ function StrategiesView() {
               initial={{ opacity: 0, y: 10 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.3, delay: i * 0.05 }}
-              className="rounded-lg border border-white/5 bg-white/[0.02] p-4 hover:border-cyan-500/20 transition-colors"
+              className="rounded-lg border border-white/5 bg-white/[0.02] p-4 hover:border-violet-500/20 transition-colors"
             >
               <div className="flex items-center justify-between mb-3">
                 <div className="flex items-center gap-2">
                   <div className="w-8 h-8 rounded-md bg-white/[0.04] border border-white/10 flex items-center justify-center">
-                    <Bot className="w-4 h-4 text-cyan-300" />
+                    <Bot className="w-4 h-4 text-violet-300" />
                   </div>
                   <div>
                     <div className="text-sm font-semibold">{s.name}</div>
@@ -1032,7 +1032,7 @@ function StrategiesView() {
                     s.status === "Live"
                       ? "bg-emerald-500/10 text-emerald-300 border border-emerald-500/20"
                       : s.status === "Paper"
-                        ? "bg-cyan-500/10 text-cyan-200 border border-cyan-500/20"
+                        ? "bg-violet-500/10 text-violet-200 border border-violet-500/20"
                         : "bg-white/5 text-white/50 border border-white/10"
                   }`}
                 >
@@ -1049,7 +1049,7 @@ function StrategiesView() {
                   className={`flex items-center justify-center gap-1.5 text-[11px] py-1.5 px-3 rounded-md flex-1 ${
                     s.deployed
                       ? "bg-white/5 border border-white/10 text-white/70"
-                      : "bg-gradient-to-br from-cyan-500 to-blue-600 font-medium"
+                      : "bg-gradient-to-br from-violet-500 to-purple-600 font-medium"
                   }`}
                 >
                   {s.deployed ? (

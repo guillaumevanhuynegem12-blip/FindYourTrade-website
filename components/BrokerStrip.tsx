@@ -21,7 +21,7 @@ export default function BrokerStrip() {
           <span className="text-xs tracking-[0.25em] text-white/40 uppercase">
             Works with
           </span>
-          <span className="text-[10px] px-2 py-0.5 rounded-full bg-cyan-500/10 border border-cyan-500/30 text-cyan-200">
+          <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-200">
             Launching soon
           </span>
         </div>
@@ -34,7 +34,7 @@ export default function BrokerStrip() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.4, delay: i * 0.04 }}
-              className="rounded-lg border border-white/5 bg-white/[0.02] px-4 py-3 text-center text-sm text-white/60 hover:text-white hover:border-cyan-500/30 hover:bg-cyan-500/[0.04] transition-all"
+              className="rounded-lg border border-white/5 bg-white/[0.02] px-4 py-3 text-center text-sm text-white/60 hover:text-white hover:border-violet-500/30 hover:bg-violet-500/[0.04] transition-all"
             >
               {b}
             </motion.div>
@@ -43,7 +43,7 @@ export default function BrokerStrip() {
 
         <p className="text-center text-xs text-white/40 mt-6">
           Don&rsquo;t see yours?{" "}
-          <a href="#waitlist" className="text-cyan-300 hover:text-cyan-200">
+          <a href="#waitlist" className="text-violet-300 hover:text-violet-200">
             Request it on the waitlist
           </a>
           .

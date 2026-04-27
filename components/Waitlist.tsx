@@ -31,7 +31,7 @@ export default function Waitlist() {
 
   return (
     <section id="waitlist" className="relative px-6 py-32">
-      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 max-w-3xl mx-auto h-64 bg-gradient-to-r from-cyan-600/20 via-blue-600/20 to-indigo-600/20 blur-3xl pointer-events-none" />
+      <div className="absolute inset-x-0 top-1/2 -translate-y-1/2 max-w-3xl mx-auto h-64 bg-gradient-to-r from-violet-600/20 via-purple-600/20 to-purple-600/20 blur-3xl pointer-events-none" />
       <div className="relative max-w-3xl mx-auto text-center">
         <motion.h2
           initial={{ opacity: 0, y: 20 }}
@@ -57,7 +57,7 @@ export default function Waitlist() {
           <motion.div
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
-            className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-cyan-500/10 border border-cyan-500/30 text-cyan-200"
+            className="mt-8 inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-violet-500/10 border border-violet-500/30 text-violet-200"
           >
             <Check className="w-4 h-4" />
             You're in. Watch your inbox for an invite.
@@ -77,12 +77,12 @@ export default function Waitlist() {
               placeholder="you@trading.com"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-cyan-500/50 focus:bg-white/10 outline-none transition-colors placeholder:text-white/30"
+              className="flex-1 px-4 py-3 rounded-lg bg-white/5 border border-white/10 focus:border-violet-500/50 focus:bg-white/10 outline-none transition-colors placeholder:text-white/30"
             />
             <button
               type="submit"
               disabled={state === "loading"}
-              className="px-6 py-3 rounded-lg bg-gradient-to-br from-cyan-500 to-blue-600 font-medium shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-all hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
+              className="px-6 py-3 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 font-medium shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-all hover:scale-[1.02] disabled:opacity-60 disabled:hover:scale-100"
             >
               {state === "loading" ? "Joining…" : "Join waitlist"}
             </button>

@@ -32,7 +32,7 @@ export default function Nav() {
         </div>
         <Link
           href="#waitlist"
-          className="text-sm px-3.5 py-1.5 rounded-full bg-gradient-to-br from-cyan-500 to-blue-600 shadow-lg shadow-cyan-500/30 hover:shadow-cyan-500/50 transition-shadow"
+          className="text-sm px-3.5 py-1.5 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-shadow"
         >
           Get early access
         </Link>
@@ -48,7 +48,7 @@ function NovxMark({ size = 22 }: { size?: number }) {
       width={size}
       height={size}
       viewBox="0 0 100 100"
-      className="text-[#06B6D4] drop-shadow-[0_0_8px_rgba(34,211,238,0.5)]"
+      className="text-[#A855F7] drop-shadow-[0_0_8px_rgba(168,85,247,0.5)]"
       aria-hidden="true"
     >
       <g transform="translate(50 50)">
