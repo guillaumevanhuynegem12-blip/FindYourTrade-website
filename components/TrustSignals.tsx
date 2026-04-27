@@ -18,13 +18,13 @@ export default function TrustSignals() {
             icon={Sparkles}
             kicker="Built by traders"
             headline="Not a fintech spreadsheet"
-            sub="We built NOVX because existing journals failed us. Every feature answers a question we asked ourselves while losing money."
+            sub="We built fyt because existing journals failed us. Every feature answers a question we asked ourselves while losing money."
           />
           <Card
             icon={Lock}
             kicker="Read-only by default"
             headline="Your broker, your keys"
-            sub="NOVX uses read-only broker connections. We can see your trades. We can&rsquo;t move your money."
+            sub="fyt uses read-only broker connections. We can see your trades. We can&rsquo;t move your money."
           />
         </div>
       </div>

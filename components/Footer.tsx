@@ -7,7 +7,7 @@ export default function Footer() {
             width="16"
             height="16"
             viewBox="0 0 100 100"
-            className="text-[#06B6D4]"
+            className="text-[#A855F7]"
             aria-hidden="true"
           >
             <g transform="translate(50 50)">
@@ -25,7 +25,7 @@ export default function Footer() {
               ))}
             </g>
           </svg>
-          <span>© {new Date().getFullYear()} Novx Trading</span>
+          <span>© {new Date().getFullYear()} fyt</span>
         </div>
         <div className="flex gap-6">
           <a href="#" className="hover:text-white transition-colors">

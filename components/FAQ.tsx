@@ -6,7 +6,7 @@ import { Plus } from "lucide-react";
 
 const faqs = [
   {
-    q: "When does NOVX launch?",
+    q: "When does fyt launch?",
     a: "Early access opens in waves throughout 2026. Waitlist members are invited first, in the order they signed up. Join early — lifetime discount disappears at public launch.",
   },
   {
@@ -14,24 +14,24 @@ const faqs = [
     a: "At launch: TradingView, MetaTrader 5, NinjaTrader, Tradovate, Interactive Brokers, and Rithmic. We&rsquo;re adding cTrader and TD Ameritrade shortly after. Request yours on the waitlist form and we&rsquo;ll prioritise based on demand.",
   },
   {
-    q: "How much will NOVX cost?",
+    q: "How much will fyt cost?",
     a: "Pricing isn&rsquo;t final, but we&rsquo;re targeting under $40/month for the core tier — journal, AI coach, risk control. Strategy builder and live automation sit on a higher tier. Waitlist members get a permanent discount regardless of what the public price lands at.",
   },
   {
     q: "Isn&rsquo;t this just another trade journal?",
-    a: "Journals log what happened. NOVX tells you why you lost and stops you from repeating it. The journal is automated, the coach is genuinely useful, and the strategy builder lets you take what works and run it without you. Those three things together don&rsquo;t exist anywhere else right now.",
+    a: "Journals log what happened. fyt tells you why you lost and stops you from repeating it. The journal is automated, the coach is genuinely useful, and the strategy builder lets you take what works and run it without you. Those three things together don&rsquo;t exist anywhere else right now.",
   },
   {
     q: "Do I need to know how to code to use the strategy builder?",
-    a: "No. You describe your strategy in plain English — entries, exits, filters, risk. NOVX translates it into a backtest, runs it, and deploys it live. If you can explain your edge to another trader, you can build it in NOVX.",
+    a: "No. You describe your strategy in plain English — entries, exits, filters, risk. fyt translates it into a backtest, runs it, and deploys it live. If you can explain your edge to another trader, you can build it in fyt.",
   },
   {
-    q: "I&rsquo;m a prop firm trader. Does NOVX work for me?",
+    q: "I&rsquo;m a prop firm trader. Does fyt work for me?",
     a: "Yes — prop firm traders are a primary use case. Risk Control ships with templates for FTMO, Topstep, MyForexFunds, and others. It enforces daily loss limits, trailing drawdown, and consistency rules before the violation happens, not after.",
   },
   {
-    q: "What data does NOVX need? Is my account safe?",
-    a: "NOVX uses read-only broker connections wherever possible — we can see your fills, we cannot place or modify orders. Where live automation is needed, you opt in per-strategy with explicit scope. Your broker credentials are encrypted at rest and never leave your region.",
+    q: "What data does fyt need? Is my account safe?",
+    a: "fyt uses read-only broker connections wherever possible — we can see your fills, we cannot place or modify orders. Where live automation is needed, you opt in per-strategy with explicit scope. Your broker credentials are encrypted at rest and never leave your region.",
   },
 ];
 

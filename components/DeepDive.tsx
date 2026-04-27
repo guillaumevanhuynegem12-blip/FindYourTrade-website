@@ -8,7 +8,7 @@ const sections = [
     num: "01",
     kicker: "AI Coach",
     title: "See every mistake before it costs you again.",
-    desc: "NOVX's AI reads your trades the way a senior trader would — flagging overtrading, revenge trades, premature exits, and the emotional patterns you keep repeating.",
+    desc: "fyt's AI reads your trades the way a senior trader would — flagging overtrading, revenge trades, premature exits, and the emotional patterns you keep repeating.",
     bullets: [
       "Pattern detection across thousands of trades",
       "Plain-English explanations, not just stats",
@@ -20,7 +20,7 @@ const sections = [
     num: "02",
     kicker: "Automated Journal",
     title: "Every trade, logged. Zero manual entry.",
-    desc: "Sync your broker once. NOVX pulls every fill, tags your setups, and reconstructs your reasoning with AI — so your journal actually gets filled out.",
+    desc: "Sync your broker once. fyt pulls every fill, tags your setups, and reconstructs your reasoning with AI — so your journal actually gets filled out.",
     bullets: [
       "Auto-sync with major brokers and platforms",
       "Screenshots and charts attached automatically",
@@ -32,7 +32,7 @@ const sections = [
     num: "03",
     kicker: "Risk Control",
     title: "Your rules. Enforced before you can break them.",
-    desc: "Set your max daily loss, max position size, and consistency rules. NOVX blocks the trades that violate them — before the loss, not after.",
+    desc: "Set your max daily loss, max position size, and consistency rules. fyt blocks the trades that violate them — before the loss, not after.",
     bullets: [
       "Per-account risk limits",
       "Prop firm rule templates built-in",
@@ -44,7 +44,7 @@ const sections = [
     num: "04",
     kicker: "Strategy Builder",
     title: "Describe your edge. Test it. Automate it.",
-    desc: "Write your strategy in plain English. NOVX translates it into a backtest, runs it over years of data, and deploys it live — no code required.",
+    desc: "Write your strategy in plain English. fyt translates it into a backtest, runs it over years of data, and deploys it live — no code required.",
     bullets: [
       "Natural language strategy definitions",
       "Walk-forward backtesting on real ticks",

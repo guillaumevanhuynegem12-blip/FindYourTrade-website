@@ -5,7 +5,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        novx: {
+        fyt: {
           bg: "#0A0604",
           surface: "#160A05",
           card: "#1F0E07",

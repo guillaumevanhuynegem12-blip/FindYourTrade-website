@@ -65,7 +65,7 @@ export default function DashboardPreview() {
             </div>
             <div className="flex-1 flex justify-center">
               <div className="text-xs text-white/40 bg-white/5 px-3 py-1 rounded-md border border-white/5">
-                novx.trading / {view}
+                findyourtrade.eu / {view}
               </div>
             </div>
             <button
@@ -190,7 +190,7 @@ function OverviewView() {
       <KpiRow />
       <div className="grid grid-cols-1 lg:grid-cols-12 gap-4">
         <div className="lg:col-span-4">
-          <NovxScoreCard />
+          <FytScoreCard />
         </div>
         <div className="lg:col-span-8">
           <CalendarCard />
@@ -253,7 +253,7 @@ function Kpi({
   );
 }
 
-function NovxScoreCard() {
+function FytScoreCard() {
   const metrics = [
     { label: "Win %", value: 82 },
     { label: "Profit Factor", value: 78 },
@@ -284,7 +284,7 @@ function NovxScoreCard() {
   return (
     <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5 h-full">
       <div className="flex items-center justify-between mb-1">
-        <div className="text-xs text-white/50">Novx Score</div>
+        <div className="text-xs text-white/50">fyt Score</div>
         <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/20">
           Top 14%
         </span>

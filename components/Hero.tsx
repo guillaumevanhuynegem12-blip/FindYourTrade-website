@@ -35,7 +35,7 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.2 }}
           className="mt-6 text-lg md:text-xl text-white/60 max-w-2xl mx-auto"
         >
-          NOVX helps traders journal automatically, manage risk, analyse mistakes with AI, and
+          fyt helps traders journal automatically, manage risk, analyse mistakes with AI, and
           build strategies they can test and automate.
         </motion.p>
 

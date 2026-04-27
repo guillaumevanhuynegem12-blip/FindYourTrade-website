@@ -13,8 +13,8 @@ export default function Nav() {
     >
       <nav className="flex items-center gap-6 px-5 py-2.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl">
         <Link href="/" className="flex items-center gap-2 font-semibold tracking-tight">
-          <NovxMark />
-          Novx
+          <FytMark />
+          fyt
         </Link>
         <div className="hidden sm:flex items-center gap-5 text-sm text-white/60">
           <a href="#preview" className="hover:text-white transition-colors">
@@ -41,7 +41,7 @@ export default function Nav() {
   );
 }
 
-function NovxMark({ size = 22 }: { size?: number }) {
+function FytMark({ size = 22 }: { size?: number }) {
   const rays = [0, 45, 90, 135, 180, 225, 270, 315];
   return (
     <svg
