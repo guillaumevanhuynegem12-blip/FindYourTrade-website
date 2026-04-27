@@ -296,8 +296,8 @@ function FytScoreCard() {
       <svg viewBox="0 0 220 220" className="w-full">
         <defs>
           <radialGradient id="radarFill" cx="50%" cy="50%" r="50%">
-            <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.32" />
-            <stop offset="100%" stopColor="#3B82F6" stopOpacity="0.12" />
+            <stop offset="0%" stopColor="#A855F7" stopOpacity="0.32" />
+            <stop offset="100%" stopColor="#7C3AED" stopOpacity="0.12" />
           </radialGradient>
         </defs>
         {gridLevels.map((lvl) => (
@@ -335,11 +335,11 @@ function FytScoreCard() {
           style={{ transformOrigin: `${cx}px ${cy}px` }}
           points={points.map((p) => `${p.x},${p.y}`).join(" ")}
           fill="url(#radarFill)"
-          stroke="#22D3EE"
+          stroke="#A855F7"
           strokeWidth="1.5"
         />
         {points.map((p) => (
-          <circle key={p.label} cx={p.x} cy={p.y} r="2.5" fill="#67E8F9" />
+          <circle key={p.label} cx={p.x} cy={p.y} r="2.5" fill="#C084FC" />
         ))}
         {points.map((p) => (
           <text
@@ -506,12 +506,12 @@ function EquityCurve() {
     <svg viewBox="0 0 600 180" className="w-full h-36 md:h-44">
       <defs>
         <linearGradient id="eqFill" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stopColor="#22D3EE" stopOpacity="0.45" />
-          <stop offset="100%" stopColor="#22D3EE" stopOpacity="0" />
+          <stop offset="0%" stopColor="#A855F7" stopOpacity="0.45" />
+          <stop offset="100%" stopColor="#A855F7" stopOpacity="0" />
         </linearGradient>
         <linearGradient id="eqLine" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stopColor="#22D3EE" />
-          <stop offset="100%" stopColor="#3B82F6" />
+          <stop offset="0%" stopColor="#A855F7" />
+          <stop offset="100%" stopColor="#7C3AED" />
         </linearGradient>
       </defs>
       {[0, 45, 90, 135].map((y) => (
