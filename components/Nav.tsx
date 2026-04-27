@@ -22,13 +22,16 @@ export default function Nav() {
       initial={{ opacity: 0, y: -10 }}
       animate={{ opacity: hidden ? 0 : 1, y: hidden ? -80 : 0 }}
       transition={{ duration: 0.35, ease: "easeOut" }}
-      className="fixed top-4 inset-x-4 z-50 flex justify-center"
+      className="fixed top-4 inset-x-4 z-50 flex items-center justify-between gap-3"
     >
+      <Link
+        href="/"
+        className="flex items-center gap-2 text-lg font-semibold tracking-tight px-4 py-2 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl"
+      >
+        <FytMark size={28} />
+        fyt
+      </Link>
       <nav className="flex items-center gap-6 px-5 py-2.5 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl">
-        <Link href="/" className="flex items-center gap-2 text-lg font-semibold tracking-tight">
-          <FytMark size={30} />
-          fyt
-        </Link>
         <div className="hidden sm:flex items-center gap-5 text-sm text-white/60">
           <a href="#preview" className="hover:text-white transition-colors">
             Product
