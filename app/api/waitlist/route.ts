@@ -1,17 +1,8 @@
 import { NextResponse } from "next/server";
-import { promises as fs } from "fs";
-import path from "path";
+import { Redis } from "@upstash/redis";
 
-const FILE = path.join(process.cwd(), "waitlist.json");
-
-async function readList(): Promise<{ email: string; at: string }[]> {
-  try {
-    const raw = await fs.readFile(FILE, "utf8");
-    return JSON.parse(raw);
-  } catch {
-    return [];
-  }
-}
+const redis = Redis.fromEnv();
+const KEY = "waitlist:emails";
 
 export async function POST(req: Request) {
   try {
@@ -23,18 +14,18 @@ export async function POST(req: Request) {
     ) {
       return NextResponse.json({ error: "Invalid email" }, { status: 400 });
     }
-    const list = await readList();
-    if (!list.some((e) => e.email === email)) {
-      list.push({ email, at: new Date().toISOString() });
-      await fs.writeFile(FILE, JSON.stringify(list, null, 2));
+    const exists = await redis.hexists(KEY, email);
+    if (!exists) {
+      await redis.hset(KEY, { [email]: new Date().toISOString() });
     }
-    return NextResponse.json({ ok: true, count: list.length });
+    const count = await redis.hlen(KEY);
+    return NextResponse.json({ ok: true, count });
   } catch {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
   }
 }
 
 export async function GET() {
-  const list = await readList();
-  return NextResponse.json({ count: list.length });
+  const count = await redis.hlen(KEY);
+  return NextResponse.json({ count });
 }
