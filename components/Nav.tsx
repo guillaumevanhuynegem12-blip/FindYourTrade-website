@@ -42,7 +42,8 @@ export default function Nav() {
 }
 
 function FytMark({ size = 22 }: { size?: number }) {
-  const rays = [0, 45, 90, 135, 180, 225, 270, 315];
+  const directions = [0, 90, 180, 270];
+  const splay = 22;
   return (
     <svg
       width={size}
@@ -52,17 +53,27 @@ function FytMark({ size = 22 }: { size?: number }) {
       aria-hidden="true"
     >
       <g transform="translate(50 50)">
-        {rays.map((a) => (
-          <rect
-            key={a}
-            x="-6"
-            y="-46"
-            width="12"
-            height="32"
-            rx="6"
-            fill="currentColor"
-            transform={`rotate(${a})`}
-          />
+        {directions.map((dir) => (
+          <g key={dir} transform={`rotate(${dir})`}>
+            <rect
+              x="-7"
+              y="-44"
+              width="14"
+              height="30"
+              rx="7"
+              fill="currentColor"
+              transform={`rotate(${-splay})`}
+            />
+            <rect
+              x="-7"
+              y="-44"
+              width="14"
+              height="30"
+              rx="7"
+              fill="currentColor"
+              transform={`rotate(${splay})`}
+            />
+          </g>
         ))}
       </g>
     </svg>
