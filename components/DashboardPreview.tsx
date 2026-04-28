@@ -755,11 +755,7 @@ function RiskView() {
                     initial={{ width: 0 }}
                     animate={{ width: `${l.used}%` }}
                     transition={{ duration: 1, ease: "easeOut" }}
-                    className={`h-full rounded-full ${
-                      l.tone === "warn"
-                        ? "bg-gradient-to-r from-amber-500 to-rose-400"
-                        : "bg-white/30"
-                    }`}
+                    className="h-full rounded-full bg-white/30"
                   />
                 </div>
               </div>
