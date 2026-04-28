@@ -276,11 +276,7 @@ function RiskVisual() {
                 whileInView={{ width: `${l.used}%` }}
                 viewport={{ once: true }}
                 transition={{ duration: 1, ease: "easeOut" }}
-                className={`h-full rounded-full ${
-                  l.color === "orange"
-                    ? "bg-gradient-to-r from-violet-500 to-purple-600"
-                    : "bg-gradient-to-r from-amber-500 to-rose-500"
-                }`}
+                className="h-full rounded-full bg-gradient-to-r from-violet-500 to-purple-600"
               />
             </div>
           </div>
