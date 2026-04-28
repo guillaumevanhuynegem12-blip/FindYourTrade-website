@@ -22,6 +22,7 @@ import {
   Sparkles,
   Sun,
   Moon,
+  Send,
 } from "lucide-react";
 
 type View = "overview" | "journal" | "risk" | "coach" | "strategies" | "markets";
@@ -293,7 +294,7 @@ function FytScoreCard() {
         <div className="text-4xl font-bold text-violet-300">{score}</div>
         <div className="text-xs text-white/40">/ 100</div>
       </div>
-      <svg viewBox="0 0 220 220" className="w-full">
+      <svg viewBox="0 0 220 220" className="w-full text-white/70">
         <defs>
           <radialGradient id="radarFill" cx="50%" cy="50%" r="50%">
             <stop offset="0%" stopColor="#A855F7" stopOpacity="0.32" />
@@ -312,7 +313,8 @@ function FytScoreCard() {
               })
               .join(" ")}
             fill="none"
-            stroke="rgba(255,255,255,0.05)"
+            stroke="currentColor"
+            strokeOpacity="0.15"
           />
         ))}
         {metrics.map((_, i) => {
@@ -324,7 +326,8 @@ function FytScoreCard() {
               y1={cy}
               x2={cx + Math.cos(angle) * radius}
               y2={cy + Math.sin(angle) * radius}
-              stroke="rgba(255,255,255,0.04)"
+              stroke="currentColor"
+              strokeOpacity="0.12"
             />
           );
         })}
@@ -347,7 +350,7 @@ function FytScoreCard() {
             x={p.lx}
             y={p.ly}
             fontSize="9"
-            fill="rgba(255,255,255,0.5)"
+            fill="currentColor"
             textAnchor="middle"
             dominantBaseline="central"
           >
@@ -966,7 +969,116 @@ function CoachView() {
           </div>
         </div>
       </div>
+
+      <AskCoach />
     </>
+  );
+}
+
+function AskCoach() {
+  const seed: { from: "user" | "bot"; text: string }[] = [
+    { from: "user", text: "Why did I lose so much last Friday afternoon?" },
+    {
+      from: "bot",
+      text: "You took 6 trades after 14:00 — your stats show your win rate drops to 32% in that window. Two were revenge trades after the CL stop-out at 13:45. Without that session, you'd have closed Friday net positive.",
+    },
+    { from: "user", text: "How do I stop doing that?" },
+    {
+      from: "bot",
+      text: "Enable the Friday afternoon lockout in Risk Control. It hard-blocks new orders after 14:00 ET on Fridays, with one override per month. Want me to turn it on?",
+    },
+  ];
+  const cannedReplies = [
+    "Looking at your last 90 days, the single biggest fix is cutting Friday afternoon trades — that alone is -$1,842 over the period.",
+    "Your A+ setups (opening range breakout, 1.5x volume, morning session) win 82%. Scaling those by 50% would have added roughly +$3,200 in the same window.",
+    "Across your last 412 trades, your average winner is 0.9R — you're cutting them ~0.8R early. Holding to plan would have shifted PF from 1.6 to 2.3.",
+    "The pattern I'd flag: your worst losses cluster in the 30 minutes after a stop-out. Forcing a 15-minute cooldown after any losing trade would have prevented 7 of the 11 biggest losers.",
+  ];
+
+  const [messages, setMessages] = useState(seed);
+  const [input, setInput] = useState("");
+  const [thinking, setThinking] = useState(false);
+
+  function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    const q = input.trim();
+    if (!q || thinking) return;
+    setMessages((m) => [...m, { from: "user", text: q }]);
+    setInput("");
+    setThinking(true);
+    const reply = cannedReplies[Math.floor(Math.random() * cannedReplies.length)];
+    setTimeout(() => {
+      setMessages((m) => [...m, { from: "bot", text: reply }]);
+      setThinking(false);
+    }, 900);
+  }
+
+  return (
+    <div className="rounded-xl border border-white/5 bg-white/[0.02] p-5">
+      <div className="flex items-center justify-between mb-4">
+        <div className="flex items-center gap-2">
+          <Bot className="w-4 h-4 text-violet-300" />
+          <div className="text-xs text-white/50">Ask your coach</div>
+        </div>
+        <span className="text-[10px] px-2 py-0.5 rounded-full bg-violet-500/10 text-violet-200 border border-violet-500/20">
+          Trained on your trades
+        </span>
+      </div>
+
+      <div className="space-y-3 max-h-72 overflow-y-auto pr-1 mb-4">
+        {messages.map((m, i) => (
+          <div
+            key={i}
+            className={`flex ${m.from === "user" ? "justify-end" : "justify-start"}`}
+          >
+            <div
+              className={`max-w-[80%] px-3.5 py-2.5 rounded-2xl text-sm leading-relaxed ${
+                m.from === "user"
+                  ? "bg-violet-500/15 border border-violet-500/25 text-violet-100 rounded-br-sm"
+                  : "bg-white/[0.04] border border-white/5 text-white/85 rounded-bl-sm"
+              }`}
+            >
+              {m.text}
+            </div>
+          </div>
+        ))}
+        {thinking && (
+          <div className="flex justify-start">
+            <div className="bg-white/[0.04] border border-white/5 px-3.5 py-2.5 rounded-2xl rounded-bl-sm">
+              <span className="inline-flex gap-1 items-center">
+                <span className="w-1.5 h-1.5 rounded-full bg-white/50 animate-bounce" />
+                <span
+                  className="w-1.5 h-1.5 rounded-full bg-white/50 animate-bounce"
+                  style={{ animationDelay: "0.15s" }}
+                />
+                <span
+                  className="w-1.5 h-1.5 rounded-full bg-white/50 animate-bounce"
+                  style={{ animationDelay: "0.3s" }}
+                />
+              </span>
+            </div>
+          </div>
+        )}
+      </div>
+
+      <form onSubmit={handleSubmit} className="flex gap-2">
+        <input
+          type="text"
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="Ask about your trades, patterns, risk…"
+          className="flex-1 px-3.5 py-2.5 rounded-lg bg-white/[0.03] border border-white/10 focus:border-violet-500/50 outline-none text-sm placeholder:text-white/30 transition-colors"
+        />
+        <button
+          type="submit"
+          disabled={!input.trim() || thinking}
+          aria-label="Send"
+          className="px-4 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 text-white flex items-center justify-center disabled:opacity-50 disabled:cursor-not-allowed transition-opacity"
+        >
+          <Send className="w-4 h-4" />
+        </button>
+      </form>
+    </div>
   );
 }
 

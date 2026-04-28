@@ -42,6 +42,7 @@ body {
 }
 
 /* Dashboard preview — light theme overrides (scoped) */
+[data-theme="light"] { color: #18181B; }
 [data-theme="light"] .text-white { color: #18181B; }
 [data-theme="light"] .text-white\/30 { color: rgba(24, 24, 27, 0.4); }
 [data-theme="light"] .text-white\/40 { color: rgba(24, 24, 27, 0.5); }
@@ -51,17 +52,25 @@ body {
 [data-theme="light"] .text-white\/70 { color: rgba(24, 24, 27, 0.78); }
 [data-theme="light"] .text-white\/75 { color: rgba(24, 24, 27, 0.82); }
 [data-theme="light"] .text-white\/80 { color: rgba(24, 24, 27, 0.86); }
+[data-theme="light"] .text-white\/85 { color: rgba(24, 24, 27, 0.88); }
 [data-theme="light"] .text-white\/90 { color: rgba(24, 24, 27, 0.92); }
+[data-theme="light"] .placeholder\:text-white\/30::placeholder { color: rgba(24, 24, 27, 0.4); }
 
 [data-theme="light"] .bg-white\/5 { background-color: rgba(24, 24, 27, 0.04); }
 [data-theme="light"] .bg-white\/10 { background-color: rgba(24, 24, 27, 0.07); }
-[data-theme="light"] .bg-white\/30 { background-color: rgba(24, 24, 27, 0.2); }
+[data-theme="light"] .bg-white\/30 { background-color: rgba(24, 24, 27, 0.22); }
+[data-theme="light"] .bg-white\/40 { background-color: rgba(24, 24, 27, 0.32); }
+[data-theme="light"] .bg-white\/50 { background-color: rgba(24, 24, 27, 0.42); }
 [data-theme="light"] .bg-white\/\[0\.02\] { background-color: rgba(24, 24, 27, 0.025); }
 [data-theme="light"] .bg-white\/\[0\.03\] { background-color: rgba(24, 24, 27, 0.04); }
+[data-theme="light"] .bg-white\/\[0\.04\] { background-color: rgba(24, 24, 27, 0.05); }
 [data-theme="light"] .bg-white\/\[0\.05\] { background-color: rgba(24, 24, 27, 0.06); }
+[data-theme="light"] .bg-white\/\[0\.08\] { background-color: rgba(24, 24, 27, 0.09); }
 
 [data-theme="light"] .border-white\/5 { border-color: rgba(24, 24, 27, 0.08); }
 [data-theme="light"] .border-white\/10 { border-color: rgba(24, 24, 27, 0.12); }
+[data-theme="light"] .border-white\/15 { border-color: rgba(24, 24, 27, 0.16); }
+[data-theme="light"] .border-white\/20 { border-color: rgba(24, 24, 27, 0.20); }
 
 /* Brand violet — darker for legibility on light */
 [data-theme="light"] .text-violet-300 { color: #6D28D9; }
