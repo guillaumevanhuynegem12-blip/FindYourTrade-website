@@ -12,7 +12,7 @@ export default function TrustSignals() {
             icon={Users}
             kicker="Waitlist"
             headline="2,847 traders"
-            sub="already in line for early access. Early members get a lifetime discount at launch."
+            sub="already in line for early access. Early members get free access to fyt until the public launch."
           />
           <Card
             icon={Sparkles}

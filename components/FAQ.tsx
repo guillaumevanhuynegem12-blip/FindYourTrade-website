@@ -7,7 +7,7 @@ import { Plus } from "lucide-react";
 const faqs = [
   {
     q: "When does fyt launch?",
-    a: "Early access opens in waves throughout 2026. Waitlist members are invited first, in the order they signed up. Join early — lifetime discount disappears at public launch.",
+    a: "Early access opens in waves throughout 2026. Waitlist members are invited first, in the order they signed up. Early members get free access to fyt until the public launch.",
   },
   {
     q: "Which brokers and platforms will you support?",
@@ -15,7 +15,7 @@ const faqs = [
   },
   {
     q: "How much will fyt cost?",
-    a: "Pricing isn&rsquo;t final, but we&rsquo;re targeting under $40/month for the core tier — journal, AI coach, risk control. Strategy builder and live automation sit on a higher tier. Waitlist members get a permanent discount regardless of what the public price lands at.",
+    a: "Pricing isn&rsquo;t final, but we&rsquo;re targeting under $40/month for the core tier — journal, AI coach, risk control. Strategy builder and live automation sit on a higher tier. Waitlist members get full access free until the public launch.",
   },
   {
     q: "Isn&rsquo;t this just another trade journal?",

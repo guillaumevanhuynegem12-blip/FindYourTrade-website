@@ -50,7 +50,7 @@ export default function Waitlist() {
           className="mt-4 text-white/60"
         >
           <span className="text-white font-medium">2,847</span> traders already on the waitlist.
-          Early members get a lifetime discount.
+          Early members get free access until the public launch.
         </motion.p>
 
         {state === "done" ? (

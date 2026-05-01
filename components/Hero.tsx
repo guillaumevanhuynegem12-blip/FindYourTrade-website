@@ -66,7 +66,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mt-6 text-xs text-white/40"
         >
-          No card required · Lifetime discount for early members
+          No card required · Free for early members until launch
         </motion.div>
       </div>
     </section>
