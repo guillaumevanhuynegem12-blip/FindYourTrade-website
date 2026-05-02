@@ -1,4 +1,7 @@
-export function waitlistEmailHtml(): string {
+const DEFAULT_LOGO_URL = "https://findyourtrade.eu/logo.png";
+
+export function waitlistEmailHtml(logoUrl: string = DEFAULT_LOGO_URL): string {
+  const LOGO_URL = logoUrl;
   return `<!doctype html>
 <html>
   <body style="margin:0;padding:0;background:#f4f4f5;">
@@ -7,13 +10,17 @@ export function waitlistEmailHtml(): string {
         <td align="center">
           <table role="presentation" width="560" cellpadding="0" cellspacing="0" style="max-width:560px;width:100%;background:#ffffff;border-radius:14px;overflow:hidden;">
             <tr>
-              <td style="padding:36px 40px 8px 40px;text-align:center;">
-                <svg width="44" height="44" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                  <g transform="translate(50 50)">
-                    ${logoBars()}
-                  </g>
-                </svg>
-                <div style="font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:20px;font-weight:600;color:#18181B;margin-top:8px;letter-spacing:-0.01em;">fyt</div>
+              <td style="padding:36px 40px 12px 40px;text-align:center;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:0 auto;">
+                  <tr>
+                    <td style="vertical-align:middle;padding-right:4px;line-height:0;">
+                      <img src="${LOGO_URL}" width="48" height="48" alt="fyt" style="display:block;border:0;outline:none;text-decoration:none;"/>
+                    </td>
+                    <td style="vertical-align:middle;font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;font-size:30px;font-weight:700;color:#18181B;letter-spacing:-0.02em;line-height:1;">
+                      fyt
+                    </td>
+                  </tr>
+                </table>
               </td>
             </tr>
             <tr>
@@ -38,14 +45,4 @@ export function waitlistEmailHtml(): string {
     </table>
   </body>
 </html>`;
-}
-
-function logoBars(): string {
-  const splay = 22;
-  const bar = (rot: number) =>
-    `<rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(${rot})"/>`;
-  const directions = [0, 90, 180, 270];
-  return directions
-    .map((dir) => `<g transform="rotate(${dir})">${bar(-splay)}${bar(splay)}</g>`)
-    .join("");
 }

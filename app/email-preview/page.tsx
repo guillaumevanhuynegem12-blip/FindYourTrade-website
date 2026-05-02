@@ -1,7 +1,7 @@
 import { waitlistEmailHtml } from "@/lib/waitlistEmail";
 
 export default function EmailPreview() {
-  const html = waitlistEmailHtml();
+  const html = waitlistEmailHtml("/logo.png");
   return (
     <div style={{ background: "#f4f4f5", minHeight: "100vh", padding: "40px 20px" }}>
       <div style={{ maxWidth: 640, margin: "0 auto" }}>
