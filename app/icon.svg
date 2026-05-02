@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100">
+  <g transform="translate(50 50)">
+    <g transform="rotate(0)">
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(-22)"/>
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(22)"/>
+    </g>
+    <g transform="rotate(90)">
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(-22)"/>
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(22)"/>
+    </g>
+    <g transform="rotate(180)">
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(-22)"/>
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(22)"/>
+    </g>
+    <g transform="rotate(270)">
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(-22)"/>
+      <rect x="-7" y="-44" width="14" height="30" rx="7" fill="#A855F7" transform="rotate(22)"/>
+    </g>
+  </g>
+</svg>
