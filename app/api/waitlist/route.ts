@@ -13,6 +13,15 @@ const resend = process.env.RESEND_API_KEY ? new Resend(process.env.RESEND_API_KE
 const FROM = process.env.WAITLIST_FROM_EMAIL || "fyt <onboarding@resend.dev>";
 const REPLY_TO = process.env.WAITLIST_REPLY_TO_EMAIL;
 
+function escapeHtml(s: string): string {
+  return s
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;")
+    .replace(/"/g, "&quot;")
+    .replace(/'/g, "&#39;");
+}
+
 export async function POST(req: Request) {
   try {
     const { email } = await req.json();
@@ -26,21 +35,40 @@ export async function POST(req: Request) {
     const exists = await redis.hexists(KEY, email);
     if (!exists) {
       await redis.hset(KEY, { [email]: new Date().toISOString() });
-      if (resend) {
+    }
+    const count = await redis.hlen(KEY);
+
+    if (!exists && resend) {
+      try {
+        await resend.emails.send({
+          from: FROM,
+          to: email,
+          replyTo: REPLY_TO,
+          subject: "You're on the fyt waitlist",
+          html: waitlistEmailHtml(),
+        });
+      } catch (err) {
+        console.error("Resend confirmation failed:", err);
+      }
+      if (REPLY_TO) {
         try {
+          const safe = escapeHtml(email);
           await resend.emails.send({
             from: FROM,
-            to: email,
-            replyTo: REPLY_TO,
-            subject: "You're on the fyt waitlist",
-            html: waitlistEmailHtml(),
+            to: REPLY_TO,
+            subject: `New waitlist signup: ${email}`,
+            html: `<div style="font-family:-apple-system,sans-serif;font-size:14px;line-height:1.6;color:#18181B;">
+              <p style="margin:0 0 12px 0;"><strong>New fyt waitlist signup</strong></p>
+              <p style="margin:0 0 4px 0;">Email: <strong>${safe}</strong></p>
+              <p style="margin:0;">Total on waitlist: <strong>${count}</strong></p>
+            </div>`,
           });
         } catch (err) {
-          console.error("Resend send failed:", err);
+          console.error("Resend notification failed:", err);
         }
       }
     }
-    const count = await redis.hlen(KEY);
+
     return NextResponse.json({ ok: true, count });
   } catch {
     return NextResponse.json({ error: "Server error" }, { status: 500 });
