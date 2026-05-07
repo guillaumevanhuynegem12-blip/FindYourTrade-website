@@ -10,9 +10,9 @@ export default function TrustSignals() {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           <Card
             icon={Users}
-            kicker="Waitlist"
-            headline="2,847 traders"
-            sub="already in line for early access. Early members get free access to fyt until the public launch."
+            kicker="Try it now"
+            headline="Free interactive demo"
+            sub="No signup required. Click through every feature — journal, AI coach, risk control — with sample data in real time."
           />
           <Card
             icon={Sparkles}

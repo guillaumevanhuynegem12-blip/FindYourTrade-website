@@ -43,10 +43,13 @@ export default function BrokerStrip() {
 
         <p className="text-center text-xs text-white/40 mt-6">
           Don&rsquo;t see yours?{" "}
-          <a href="#waitlist" className="text-violet-300 hover:text-violet-200">
-            Request it on the waitlist
-          </a>
-          .
+          <a
+            href="mailto:support.fyt@gmail.com"
+            className="text-violet-300 hover:text-violet-200"
+          >
+            Email us
+          </a>{" "}
+          and we&rsquo;ll prioritise it.
         </p>
       </div>
     </section>
