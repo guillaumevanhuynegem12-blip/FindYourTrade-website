@@ -23,7 +23,6 @@ export async function GET() {
         style={{
           width: SIZE,
           height: SIZE,
-          background: "#ffffff",
           display: "flex",
           position: "relative",
         }}
