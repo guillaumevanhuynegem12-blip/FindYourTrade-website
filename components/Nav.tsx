@@ -51,10 +51,10 @@ export default function Nav() {
           </a>
         </div>
         <Link
-          href="/demo"
+          href="#waitlist"
           className="text-sm px-3.5 py-1.5 rounded-full bg-gradient-to-br from-violet-500 to-purple-600 shadow-lg shadow-violet-500/30 hover:shadow-violet-500/50 transition-shadow"
         >
-          Try Demo
+          Get early access
         </Link>
       </nav>
     </motion.header>

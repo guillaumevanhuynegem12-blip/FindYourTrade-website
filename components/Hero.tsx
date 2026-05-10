@@ -15,7 +15,7 @@ export default function Hero() {
           className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/[0.03] text-white/70 text-xs mb-8"
         >
           <span className="w-1.5 h-1.5 rounded-full bg-violet-400" />
-          Live demo available — no signup
+          Early access now open
         </motion.div>
 
         <motion.h1
@@ -46,10 +46,10 @@ export default function Hero() {
           className="mt-10 flex flex-col sm:flex-row gap-3 justify-center"
         >
           <Link
-            href="/demo"
+            href="#waitlist"
             className="px-6 py-3 rounded-lg bg-gradient-to-br from-violet-500 to-purple-600 text-white font-medium shadow-lg shadow-violet-500/20 hover:shadow-violet-500/40 transition-all"
           >
-            Try Demo
+            Join the waitlist
           </Link>
           <Link
             href="#preview"
@@ -66,7 +66,7 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.6 }}
           className="mt-6 text-xs text-white/40"
         >
-          No signup required · Free interactive demo
+          No card required · Free for early members until launch
         </motion.div>
       </div>
     </section>
